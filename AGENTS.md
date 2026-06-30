@@ -25,6 +25,7 @@ Blocked by: frontend and backend must be complete before integration starts
 Hot zones: any URL, embed method, or config that affects the live site
 
 ### agent: legal-content
+<!-- Include only if the project collects user data or has compliance requirements -->
 Scope: /public/privacy-policy.html (or equivalent)
 Owns: privacy policy, consent copy, compliance text
 Blocked by: owner review and approval required before any file is committed

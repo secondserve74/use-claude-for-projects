@@ -1,12 +1,10 @@
-
-claude.md
 # Claude Project Instructions
  
 ## General Behaviour
 - Follow the project spec. When in doubt, ask before assuming.
 - Prefer explicit over implicit. Leave clear comments in code.
 - Never expose secrets, API keys, or credentials in output.
-- Save a memory checkpoint at the end of every working session and after any significant milestone (feature confirmed working, blocker resolved, etc.). Update /home/kali/.claude/projects/-home-kali-makescents/memory/project-status.md with current build step progress, what's confirmed working, what's broken, and any open blockers.
+- Save a memory checkpoint at the end of every working session and after any significant milestone (feature confirmed working, blocker resolved, etc.). Update the project memory file with current build step progress, what's confirmed working, what's broken, and any open blockers.
  
 ## Verification Before Starting Work
 Before writing any code or making any changes, state out loud:

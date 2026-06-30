@@ -1,5 +1,3 @@
-
-gotchas.md
 # Gotchas — Broker Callback Form
 # Hard-won decisions. Read before touching anything.
  

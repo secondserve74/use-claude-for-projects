@@ -40,4 +40,4 @@
 ## Build Order
 <!-- Ordered list — dependencies first -->
 1. .gitignore created first — .env, node_modules listed before any commit
-2. 
+2. <!-- Add next step here -->
