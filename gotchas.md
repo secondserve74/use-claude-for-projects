@@ -80,3 +80,11 @@ What to do instead: A drip guard: at most one send per channel per window, oldes
 Proof it works: With 3+ items eligible at once, one run sends exactly one per channel; the rest follow in later windows.
 
 ## 10. [Add project-specific gotchas below — use the field-report format above]
+
+## 11. An Operating Manual Only Helps a Model That Loads It
+GOTCHA: Assuming that because claude.md/CLAUDE.md exists and is well-written, every session will follow it.
+
+Why it matters: Transplant-testing four repos' docs on a cold model, the three sessions that read the manual (9-10 tool calls) followed it precisely — hot-zone declarations, safe-test procedures, house style, index sync. The one session that made ZERO tool calls on a "quick, just jot this down" task never read the manual and fell back to generic behaviour (real IP in notes, missing the whole point of the format, index left stale). Same doc, same model — the only variable was whether it read.
+The wrong path: Rewriting the manual to be clearer. The manual was fine; it was never loaded. More words don't fix an unread file.
+What to do instead: (1) In a real Claude Code session inside the repo, CLAUDE.md auto-loads — reliable. The risk is subagents pointed at the repo and quick-task mindsets. (2) Put a "AI assistants: read CLAUDE.md before editing" banner at the very top of README.md so even a hasty session is compelled to read. (3) VERIFY the transplant — run a cold model against a realistic task with no hints and grade whether it reaches the manual's rules; a doc is not proven until watched.
+Proof it works: The re-tested session read the manual (7 tool calls) and produced fully compliant output; the failure was reproducibly about reading, not about doc content.
