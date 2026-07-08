@@ -1,6 +1,6 @@
 # use-claude-for-projects
 
-Reusable Claude project templates. Copy these five files into any new project to give Claude consistent behaviour, scope boundaries, and session continuity from day one.
+Reusable Claude project templates. Copy these files into any new project to give Claude consistent behaviour, scope boundaries, and session continuity from day one.
 
 ## The five files
 
@@ -11,10 +11,11 @@ Reusable Claude project templates. Copy these five files into any new project to
 | `AGENTS.md` | Subagent architecture — which agent owns which scope, hot zones, blocked-by dependencies |
 | `gotchas.md` | Hard-won decisions — traps to avoid, non-obvious constraints, project-specific rules |
 | `journal.md` | Session log — read at session start, append at session end |
+| `.claude/skills/extract-approach/` | The recorder — after every non-trivial solve, the approach (trap, wrong path, fix, proof) is captured into gotchas.md so future sessions inherit the reasoning |
 
 ## How to use
 
-1. Copy all five files into the root of your new project
+1. Copy all five files plus the `.claude/` directory into the root of your new project
 2. Fill in the placeholders in `claude.md` (stack, hot zones) and `spec.md` (problem, users, features, etc.)
 3. Add the `legal-content` agent to `AGENTS.md` only if your project collects user data or has compliance requirements — otherwise remove it
 4. Add project-specific gotchas to `gotchas.md` as you discover them
@@ -32,4 +33,9 @@ Claude reads all five files at the start of each session. The journal keeps cont
 - **Hot zone approval** — sensitive areas (payments, auth, credentials, etc.) require explicit approval before any change
 - **Subagent boundaries** — each agent owns a defined scope; cross-scope changes stop for orchestrator review
 - **Session continuity** — the journal means context survives across sessions without manual re-briefing
-- **Gotchas as law** — anything in gotchas.md is non-negotiable; Claude flags contradictions rather than proceeding
+- **Gotchas as law** — anything in gotchas.md is non-negotiable and additive-only; Claude flags contradictions rather than proceeding
+- **Evidence-based done** — a task is complete when the named check passed and the evidence (log line, HTTP status, query result) is shown, not when it "should work"
+- **Checkable quality bars** — every deliverable type gets a done-when checklist of observable checks, never adjectives
+- **The learning law** — every non-trivial solve leaves a field-report gotcha entry behind, so hard-won reasoning outlives the session (and the model) that produced it
+- **Spec → operating manual** — spec.md is the build plan; once live, claude.md is rewritten as the as-built operating manual and becomes the source of truth
+- **Safe testing** — live third-party accounts are never test targets; a designated test channel and the underscore-disable env-var convention are set before first integration
