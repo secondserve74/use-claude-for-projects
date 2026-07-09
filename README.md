@@ -27,6 +27,12 @@ Claude reads all five files at the start of each session. The journal keeps cont
 
 `examples/makescents/` contains the complete filled-in versions for the MakeCents broker callback form — a real project with a React frontend, Vercel serverless backend, Twilio OTP verification, and Google Sheets data storage. Use it as a reference for how to fill in the templates.
 
+## Blueprints
+
+`blueprints/` holds ready-to-run boilerplates that apply the template disciplines to a specific product shape:
+
+- `blueprints/1-day-saas/` — end-to-end multi-tenant micro-SaaS: PostgreSQL schema with RLS + Stripe-mirror billing, a signature-verified idempotent Stripe webhook, and the exact builder + phase system prompts that drive a lower-cost model to build it safely (billing is a human-reviewed hot zone; entitlement is server-side only).
+
 ## What the templates enforce
 
 - **Verification discipline** — Claude states what it's about to do, how it will verify success, and what done looks like before touching anything
